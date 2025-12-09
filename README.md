@@ -9,26 +9,23 @@ Data multi linked list untuk menyimpan data pegawai dan anak-anaknya. Menjelaska
 
 ### Soal 1
 
-⁠ ```cpp
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
 
-struct ChildNode
-{
+struct ChildNode {
     string info;
     ChildNode *next;
 };
 
-struct ParentNode
-{
+struct ParentNode {
     string info;
     ChildNode *childHead;
     ParentNode *next;
 };
 
-ParentNode *createParent(string info)
-{
+ParentNode *createParent(string info) {
     ParentNode *newNode = new ParentNode;
     newNode->info = info;
     newNode->childHead = NULL;
@@ -36,52 +33,39 @@ ParentNode *createParent(string info)
     return newNode;
 }
 
-ChildNode *createChild(string info)
-{
+ChildNode *createChild(string info) {
     ChildNode *newNode = new ChildNode;
     newNode->info = info;
     newNode->next = NULL;
     return newNode;
 }
 
-void insertParent(ParentNode *&head, string info)
-{
+void insertParent(ParentNode *&head, string info) {
     ParentNode *newNode = createParent(info);
-    if (head == NULL)
-    {
+    if (head == NULL) {
         head = newNode;
-    }
-    else
-    {
+    } else {
         ParentNode *temp = head;
-        while (temp->next != NULL)
-        {
+        while (temp->next != NULL) {
             temp = temp->next;
         }
         temp->next = newNode;
     }
 }
 
-void insertChild(ParentNode *head, string parentInfo, string childInfo)
-{
+void insertChild(ParentNode *head, string parentInfo, string childInfo) {
     ParentNode *p = head;
-    while (p != NULL && p->info != parentInfo)
-    {
+    while (p != NULL && p->info != parentInfo) {
         p = p->next;
     }
 
-    if (p != NULL)
-    {
+    if (p != NULL) {
         ChildNode *newChild = createChild(childInfo);
-        if (p->childHead == NULL)
-        {
+        if (p->childHead == NULL) {
             p->childHead = newChild;
-        }
-        else 
-        {
+        } else {
             ChildNode *c = p->childHead;
-            while (c->next != NULL)
-            {
+            while (c->next != NULL) {
                 c = c->next;
             }
             c->next = newChild;
@@ -89,28 +73,21 @@ void insertChild(ParentNode *head, string parentInfo, string childInfo)
     }
 }
 
-void printAll(ParentNode *head)
-{
+void printAll(ParentNode *head) {
     ParentNode *p = head;
-    while (p != NULL)
-    {
+    while (p != NULL) {
         cout << p->info;
         ChildNode *c = p->childHead;
-        if (c != NULL)
-        {
-            while (c != NULL)
-            {
-                cout << " -> " << c->info;
-                c = c->next;
-            }
+        while (c != NULL) {
+            cout << " -> " << c->info;
+            c = c->next;
         }
         cout << endl;
         p = p->next;
     }
 }
 
-int main()
-{
+int main() {
     ParentNode *list = NULL;
 
     insertParent(list, "Parent Node 1");
@@ -121,11 +98,10 @@ int main()
     insertChild(list, "Parent Node 2", "Child Node C");
 
     printAll(list);
-
     return 0;
 }
+```
 
-``` ⁠
 
 Output
 ⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/output/guided13.png)
