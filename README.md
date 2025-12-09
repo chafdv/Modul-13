@@ -9,8 +9,7 @@ Data multi linked list untuk menyimpan data pegawai dan anak-anaknya. Menjelaska
 
 ### Soal 1
 
-``cpp
-
+⁠ ```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -125,7 +124,7 @@ int main()
 
     return 0;
 }
-```
+``` ⁠
 
 Output
 ⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/Output/guided13.png)
@@ -137,11 +136,14 @@ Program tersebut membuat struktur data parent–child dengan linked list. Setiap
 
 ## Unguided
 
-Perhatikan program 46 multilist.h, buat multilist.cpp untuk implementasi semua fungsi pada multilist.h. Buat main.cpp untuk pemanggilan fungsi-fungsi tersebut. Buatlah ADT Multi Linked list sebagai berikut di dalam file “circularlist.h”, Buatlah implementasi ADT Doubly Linked list pada file “circularlist.cpp”. Tambahkan fungsi/prosedur berikut pada file “main.cpp”.
+### Soal 1
 
-### circularlist.h
+Perhatikan program 46 multilist.h, buat multilist.cpp untuk implementasi semua fungsi pada
+multilist.h. Buat main.cpp untuk pemanggilan fungsi-fungsi tersebut.
 
-```cpp
+## circularlist.h
+
+```⁠cpp
 #ifndef CIRCULARLIST_H_INCLUDED
 #define CIRCULARLIST_H_INCLUDED
 
@@ -168,6 +170,7 @@ struct List {
     address First;
 };
 
+// PROTOTYPE
 void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address P);
@@ -185,12 +188,12 @@ void printInfo(List L);
 
 #endif
 ```
+ ⁠
 
----
 
 ### circularlist.cpp
 
-```
+```⁠cpp
 #include "circularlist.h"
 
 void createList(List &L){
@@ -209,12 +212,12 @@ void dealokasi(address P){
 }
 
 void insertFirst(List &L, address P){
-    if (L.First == Nil){
+    if(L.First == Nil){
         L.First = P;
         P->next = P;
     } else {
         address Q = L.First;
-        while (Q->next != L.First){
+        while(Q->next != L.First){
             Q = Q->next;
         }
         Q->next = P;
@@ -224,19 +227,19 @@ void insertFirst(List &L, address P){
 }
 
 void insertAfter(List &L, address Prec, address P){
-    if (Prec != Nil){
+    if(Prec != Nil){
         P->next = Prec->next;
         Prec->next = P;
     }
 }
 
 void insertLast(List &L, address P){
-    if (L.First == Nil){
+    if(L.First == Nil){
         L.First = P;
         P->next = P;
     } else {
         address Q = L.First;
-        while (Q->next != L.First){
+        while(Q->next != L.First){
             Q = Q->next;
         }
         Q->next = P;
@@ -245,14 +248,14 @@ void insertLast(List &L, address P){
 }
 
 void deleteFirst(List &L, address &P){
-    if (L.First == Nil){
+    if(L.First == Nil){
         P = Nil;
-    } else if (L.First->next == L.First){
+    } else if(L.First->next == L.First){
         P = L.First;
         L.First = Nil;
     } else {
         address Q = L.First;
-        while (Q->next != L.First){
+        while(Q->next != L.First){
             Q = Q->next;
         }
         P = L.First;
@@ -263,24 +266,22 @@ void deleteFirst(List &L, address &P){
 }
 
 void deleteAfter(List &L, address Prec, address &P){
-    if (Prec != Nil){
+    if(Prec != Nil){
         P = Prec->next;
-        if (P != Nil){
-            Prec->next = P->next;
-            P->next = Nil;
-        }
+        Prec->next = P->next;
+        P->next = Nil;
     }
 }
 
 void deleteLast(List &L, address &P){
-    if (L.First == Nil){
+    if(L.First == Nil){
         P = Nil;
-    } else if (L.First->next == L.First){
+    } else if(L.First->next == L.First){
         P = L.First;
         L.First = Nil;
     } else {
         address Q = L.First;
-        while (Q->next->next != L.First){
+        while(Q->next->next != L.First){
             Q = Q->next;
         }
         P = Q->next;
@@ -290,21 +291,19 @@ void deleteLast(List &L, address &P){
 }
 
 address findElm(List L, infotype x){
-    if (L.First == Nil) return Nil;
-
+    if(L.First == Nil) return Nil;
     address P = L.First;
     do {
-        if (P->info.nim == x.nim){
+        if(P->info.nim == x.nim){
             return P;
         }
         P = P->next;
-    } while (P != L.First);
-
+    } while(P != L.First);
     return Nil;
 }
 
 void printInfo(List L){
-    if (L.First == Nil){
+    if(L.First == Nil){
         cout << "List kosong" << endl;
         return;
     }
@@ -316,16 +315,16 @@ void printInfo(List L){
         cout << "L/P  : " << P->info.jenis_kelamin << endl;
         cout << "IPK  : " << P->info.ipk << endl;
         cout << endl;
+
         P = P->next;
-    } while (P != L.First);
+    } while(P != L.First);
 }
 ```
-
----
+ ⁠
 
 ### main.cpp
 
-```
+```⁠ cpp
 #include <iostream>
 #include "circularlist.h"
 using namespace std;
@@ -389,7 +388,7 @@ int main()
 Output
 ⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/Output/unguided13.png)
 
-
+Program ini membuat struktur data Circular Linked List yang node–node-nya saling terhubung melingkar. Kode main menambahkan beberapa angka ke dalam list menggunakan fungsi insertLast(), lalu mencetak seluruh isi list dengan printList(). Karena bentuknya melingkar, traversal dilakukan mulai dari head dan berhenti ketika kembali ke node awal. Program ini menunjukkan cara menyimpan dan menampilkan data secara berurutan menggunakan linked list yang ujungnya terhubung kembali ke awal.
 
 
 ## Referensi
