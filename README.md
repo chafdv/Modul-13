@@ -10,6 +10,7 @@ Data multi linked list untuk menyimpan data pegawai dan anak-anaknya. Menjelaska
 ### Soal 1
 
 ``cpp
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -127,7 +128,7 @@ int main()
 ```
 
 Output
-⁠![Output guided](https://github.com/chafdv/Modul-6/blob/main/Output/guided6.png)
+⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/Output/guided13.png)
 
 Program tersebut membuat struktur data parent–child dengan linked list. Setiap ParentNode menyimpan nama parent, pointer ke anak pertama, dan pointer ke parent berikutnya. Setiap ChildNode menyimpan nama child dan pointer ke child berikutnya. Fungsi createParent dan createChild membuat node baru, sedangkan insertParent menambahkan parent ke akhir daftar. insertChild mencari parent berdasarkan nama lalu menambahkan child di akhir daftar anak. Terakhir, printAll menampilkan setiap parent beserta seluruh child-nya secara berurutan.
 
@@ -384,6 +385,11 @@ int main()
     return 0;
 }
 ```
+
+Output
+⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/Output/unguided13.png)
+
+
 
 
 ## Referensi
