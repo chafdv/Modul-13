@@ -140,7 +140,7 @@ Perhatikan program 46 multilist.h, buat multilist.cpp untuk implementasi semua f
 
 ### circularlist.h
 
-```
+```cpp
 #ifndef CIRCULARLIST_H_INCLUDED
 #define CIRCULARLIST_H_INCLUDED
 
@@ -185,6 +185,7 @@ void printInfo(List L);
 #endif
 ```
 
+---
 
 ### circularlist.cpp
 
@@ -387,4 +388,4 @@ int main()
 
 ## Referensi
 
-1.⁠ ⁠[(https://www.geeksforgeeks.org/dsa/doubly-linked-list/)] [diakses 27-10-2025]
+1.⁠ ⁠[((https://www.scribd.com/document/733120041/Detail-Multi-Linked-List-1-N)] [diakses 8-12-2025]
