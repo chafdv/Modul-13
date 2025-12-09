@@ -362,7 +362,7 @@ int main()
 ```
 
 Output
-⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/Output/unguided13.png)
+⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/output/unguided13.png)
 
 Program ini membuat struktur data Circular Linked List yang node–node-nya saling terhubung melingkar. Kode main menambahkan beberapa angka ke dalam list menggunakan fungsi insertLast(), lalu mencetak seluruh isi list dengan printList(). Karena bentuknya melingkar, traversal dilakukan mulai dari head dan berhenti ketika kembali ke node awal. Program ini menunjukkan cara menyimpan dan menampilkan data secara berurutan menggunakan linked list yang ujungnya terhubung kembali ke awal.
 
