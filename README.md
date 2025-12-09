@@ -124,13 +124,13 @@ int main()
 
     return 0;
 }
+
 ``` ⁠
 
 Output
-⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/Output/guided13.png)
+⁠![Output guided](https://github.com/chafdv/Modul-13/blob/main/output/guided13.png)
 
 Program tersebut membuat struktur data parent–child dengan linked list. Setiap ParentNode menyimpan nama parent, pointer ke anak pertama, dan pointer ke parent berikutnya. Setiap ChildNode menyimpan nama child dan pointer ke child berikutnya. Fungsi createParent dan createChild membuat node baru, sedangkan insertParent menambahkan parent ke akhir daftar. insertChild mencari parent berdasarkan nama lalu menambahkan child di akhir daftar anak. Terakhir, printAll menampilkan setiap parent beserta seluruh child-nya secara berurutan.
-
 
 ---
 
@@ -141,7 +141,7 @@ Program tersebut membuat struktur data parent–child dengan linked list. Setiap
 Perhatikan program 46 multilist.h, buat multilist.cpp untuk implementasi semua fungsi pada
 multilist.h. Buat main.cpp untuk pemanggilan fungsi-fungsi tersebut.
 
-## circularlist.h
+### circularlist.h
 
 ```⁠cpp
 #ifndef CIRCULARLIST_H_INCLUDED
